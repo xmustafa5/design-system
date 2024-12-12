@@ -8,6 +8,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        "background-system-dark-conclusion-main-header-grstart-torch":
+          `var(--background-system-dark-conclusion-main-header-grstart-torch)`,
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

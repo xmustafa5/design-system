@@ -1,6 +1,6 @@
 {
   "name": "chesty",
-  "version": "0.1.13",
+  "version": "0.1.14",
   "bin": {
     "chesty": "./src/app/chesty/bin/cli.js"
   },

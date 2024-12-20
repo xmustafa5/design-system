@@ -25,7 +25,7 @@ import { CodeBlock } from "../chesty/components/code-block";
   
   export default function LayoutWithCard({children,title}:any) {
     return (
-      <div className="w-full flex flex-col p-6">
+      <div className="w-full flex flex-col p-3">
         <div className="flex flex-col gap-0.5">
           <Breadcrumb>
             <BreadcrumbList>
@@ -66,7 +66,7 @@ import { CodeBlock } from "../chesty/components/code-block";
               <CardHeader>
                 <CardTitle>{title}</CardTitle>
               </CardHeader>
-              <CardContent className="preview flex min-h-[350px] w-full justify-center p-10 items-center" >
+              <CardContent className="preview flex min-h-[350px] w-full flex-col justify-center p-10 items-center" >
               {children}
               </CardContent>
             </Card>

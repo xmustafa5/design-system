@@ -24,8 +24,8 @@ export default function RootLayout({
         }
       >
         <SidebarProvider>
-          <AppSidebar />
-          <main className=" relative flex min-h-svh flex-1 flex-col peer-data-[variant=floating]:min-h-[calc(100svh-theme(spacing.4))] md:peer-data-[variant=floating]:m-2 md:peer-data-[state=collapsed]:peer-data-[variant=floating]:ml-2 md:peer-data-[variant=floating]:ml-0 md:peer-data-[variant=floating]:rounded-xl md:peer-data-[variant=floating]:shadow">
+          <AppSidebar  />
+          <main className=" relative flex min-h-svh flex-1 flex-col peer-data-[variant=floating]:min-h-[calc(100svh-theme(spacing.4))] md:peer-data-[variant=floating]:m-2 md:peer-data-[state=collapsed]:peer-data-[variant=floating]:ml-2 md:peer-data-[variant=floating]:ml-0  md:peer-data-[variant=floating]:rounded-xl md:peer-data-[variant=floating]:shadow">
             <SidebarTrigger />
             {children}
           </main>

@@ -8,474 +8,223 @@ import {
   SidebarGroupLabel,
   SidebarHeader,
   SidebarMenu,
-  SidebarMenuAction,
-  SidebarMenuBadge,
   SidebarMenuButton,
   SidebarMenuItem,
-  SidebarMenuSkeleton,
-  SidebarMenuSub,
-  SidebarMenuSubButton,
-  SidebarMenuSubItem,
-  SidebarRail,
 } from "./sidebar";
+import Link from "next/link";
 
 // Menu items.
 const items = [
   {
     title: "Home",
-    url: "#",
-    icon: Home,
+    url: "/",
   },
   {
-    title: "Inbox",
-    url: "#",
-    icon: Inbox,
+    title: "Accordion",
+    url: "accordion",
   },
   {
-    title: "Calendar",
-    url: "#",
-    icon: Calendar,
+    title: "Alert",
+    url: "alert",
   },
   {
-    title: "Search",
-    url: "#",
-    icon: Search,
+    title: "Alert Dialog",
+    url: "alert-dialog",
   },
   {
-    title: "Settings",
-    url: "#",
-    icon: Settings,
+    title: "Aspect Ratio",
+    url: "aspect-ratio",
   },
   {
-    title: "Home",
-    url: "#",
-    icon: Home,
+    title: "Avatar",
+    url: "avatar",
   },
   {
-    title: "Inbox",
-    url: "#",
-    icon: Inbox,
+    title: "Badge",
+    url: "badge",
   },
   {
-    title: "Calendar",
-    url: "#",
-    icon: Calendar,
+    title: "Breadcrumb",
+    url: "breadcrumb",
   },
   {
-    title: "Search",
-    url: "#",
-    icon: Search,
-  },
-  {
-    title: "Settings",
-    url: "#",
-    icon: Settings,
-  },
-  {
-    title: "Home",
-    url: "#",
-    icon: Home,
-  },
-  {
-    title: "Inbox",
-    url: "#",
-    icon: Inbox,
+    title: "Button",
+    url: "button",
   },
   {
     title: "Calendar",
-    url: "#",
-    icon: Calendar,
+    url: "calendar",
   },
   {
-    title: "Search",
-    url: "#",
-    icon: Search,
+    title: "Card",
+    url: "card",
   },
   {
-    title: "Settings",
-    url: "#",
-    icon: Settings,
+    title: "Carousel",
+    url: "carousel",
   },
   {
-    title: "Home",
-    url: "#",
-    icon: Home,
+    title: "Chart",
+    url: "chart",
   },
   {
-    title: "Inbox",
-    url: "#",
-    icon: Inbox,
+    title: "Checkbox",
+    url: "checkbox",
   },
   {
-    title: "Calendar",
-    url: "#",
-    icon: Calendar,
+    title: "Collapsible",
+    url: "collapsible",
   },
   {
-    title: "Search",
-    url: "#",
-    icon: Search,
+    title: "Combobox",
+    url: "combobox",
   },
   {
-    title: "Settings",
-    url: "#",
-    icon: Settings,
+    title: "Command",
+    url: "command",
   },
   {
-    title: "Home",
-    url: "#",
-    icon: Home,
+    title: "Context Menu",
+    url: "context-menu",
   },
   {
-    title: "Inbox",
-    url: "#",
-    icon: Inbox,
+    title: "Data Table",
+    url: "data-table",
   },
   {
-    title: "Calendar",
-    url: "#",
-    icon: Calendar,
+    title: "Date Picker",
+    url: "date-picker",
   },
   {
-    title: "Search",
-    url: "#",
-    icon: Search,
+    title: "Dialog",
+    url: "dialog",
   },
   {
-    title: "Settings",
-    url: "#",
-    icon: Settings,
+    title: "Drawer",
+    url: "drawer",
   },
   {
-    title: "Home",
-    url: "#",
-    icon: Home,
+    title: "Dropdown Menu",
+    url: "dropdown-menu",
   },
   {
-    title: "Inbox",
-    url: "#",
-    icon: Inbox,
+    title: "Form",
+    url: "form",
   },
   {
-    title: "Calendar",
-    url: "#",
-    icon: Calendar,
+    title: "Hover Card",
+    url: "hover-card",
   },
   {
-    title: "Search",
-    url: "#",
-    icon: Search,
+    title: "Input",
+    url: "input",
   },
   {
-    title: "Settings",
-    url: "#",
-    icon: Settings,
+    title: "Input OTP",
+    url: "input-otp",
   },
   {
-    title: "Home",
-    url: "#",
-    icon: Home,
+    title: "Label",
+    url: "label",
   },
   {
-    title: "Inbox",
-    url: "#",
-    icon: Inbox,
+    title: "Menubar",
+    url: "menubar",
   },
   {
-    title: "Calendar",
-    url: "#",
-    icon: Calendar,
+    title: "Navigation Menu",
+    url: "navigation-menu",
   },
   {
-    title: "Search",
-    url: "#",
-    icon: Search,
+    title: "Pagination",
+    url: "pagination",
   },
   {
-    title: "Settings",
-    url: "#",
-    icon: Settings,
+    title: "Popover",
+    url: "popover",
   },
   {
-    title: "Home",
-    url: "#",
-    icon: Home,
+    title: "Progress",
+    url: "progress",
   },
   {
-    title: "Inbox",
-    url: "#",
-    icon: Inbox,
+    title: "Radio Group",
+    url: "radio-group",
   },
   {
-    title: "Calendar",
-    url: "#",
-    icon: Calendar,
+    title: "Resizable",
+    url: "resizable",
   },
   {
-    title: "Search",
-    url: "#",
-    icon: Search,
+    title: "Scroll Area",
+    url: "scroll-area",
   },
   {
-    title: "Settings",
-    url: "#",
-    icon: Settings,
+    title: "Select",
+    url: "select",
   },
   {
-    title: "Home",
-    url: "#",
-    icon: Home,
+    title: "Separator",
+    url: "separator",
   },
   {
-    title: "Inbox",
-    url: "#",
-    icon: Inbox,
+    title: "Sheet",
+    url: "sheet",
   },
   {
-    title: "Calendar",
-    url: "#",
-    icon: Calendar,
+    title: "Sidebar",
+    url: "sidebar",
   },
   {
-    title: "Search",
-    url: "#",
-    icon: Search,
+    title: "Skeleton",
+    url: "skeleton",
   },
   {
-    title: "Settings",
-    url: "#",
-    icon: Settings,
+    title: "Slider",
+    url: "slider",
   },
   {
-    title: "Home",
-    url: "#",
-    icon: Home,
+    title: "Sonner",
+    url: "sonner",
   },
   {
-    title: "Inbox",
-    url: "#",
-    icon: Inbox,
+    title: "Switch",
+    url: "switch",
   },
   {
-    title: "Calendar",
-    url: "#",
-    icon: Calendar,
+    title: "Table",
+    url: "table",
   },
   {
-    title: "Search",
-    url: "#",
-    icon: Search,
+    title: "Tabs",
+    url: "tabs",
   },
   {
-    title: "Settings",
-    url: "#",
-    icon: Settings,
+    title: "Textarea",
+    url: "textarea",
   },
   {
-    title: "Home",
-    url: "#",
-    icon: Home,
+    title: "Toast",
+    url: "toast",
   },
   {
-    title: "Inbox",
-    url: "#",
-    icon: Inbox,
+    title: "Toggle",
+    url: "toggle",
   },
   {
-    title: "Calendar",
-    url: "#",
-    icon: Calendar,
+    title: "Toggle Group",
+    url: "toggle-group",
   },
   {
-    title: "Search",
-    url: "#",
-    icon: Search,
-  },
-  {
-    title: "Settings",
-    url: "#",
-    icon: Settings,
-  },
-  {
-    title: "Home",
-    url: "#",
-    icon: Home,
-  },
-  {
-    title: "Inbox",
-    url: "#",
-    icon: Inbox,
-  },
-  {
-    title: "Calendar",
-    url: "#",
-    icon: Calendar,
-  },
-  {
-    title: "Search",
-    url: "#",
-    icon: Search,
-  },
-  {
-    title: "Settings",
-    url: "#",
-    icon: Settings,
-  },
-  {
-    title: "Home",
-    url: "#",
-    icon: Home,
-  },
-  {
-    title: "Inbox",
-    url: "#",
-    icon: Inbox,
-  },
-  {
-    title: "Calendar",
-    url: "#",
-    icon: Calendar,
-  },
-  {
-    title: "Search",
-    url: "#",
-    icon: Search,
-  },
-  {
-    title: "Settings",
-    url: "#",
-    icon: Settings,
-  },
-  {
-    title: "Home",
-    url: "#",
-    icon: Home,
-  },
-  {
-    title: "Inbox",
-    url: "#",
-    icon: Inbox,
-  },
-  {
-    title: "Calendar",
-    url: "#",
-    icon: Calendar,
-  },
-  {
-    title: "Search",
-    url: "#",
-    icon: Search,
-  },
-  {
-    title: "Settings",
-    url: "#",
-    icon: Settings,
-  },
-  {
-    title: "Home",
-    url: "#",
-    icon: Home,
-  },
-  {
-    title: "Inbox",
-    url: "#",
-    icon: Inbox,
-  },
-  {
-    title: "Calendar",
-    url: "#",
-    icon: Calendar,
-  },
-  {
-    title: "Search",
-    url: "#",
-    icon: Search,
-  },
-  {
-    title: "Settings",
-    url: "#",
-    icon: Settings,
-  },
-  {
-    title: "Home",
-    url: "#",
-    icon: Home,
-  },
-  {
-    title: "Inbox",
-    url: "#",
-    icon: Inbox,
-  },
-  {
-    title: "Calendar",
-    url: "#",
-    icon: Calendar,
-  },
-  {
-    title: "Search",
-    url: "#",
-    icon: Search,
-  },
-  {
-    title: "Settings",
-    url: "#",
-    icon: Settings,
-  },
-  {
-    title: "Home",
-    url: "#",
-    icon: Home,
-  },
-  {
-    title: "Inbox",
-    url: "#",
-    icon: Inbox,
-  },
-  {
-    title: "Calendar",
-    url: "#",
-    icon: Calendar,
-  },
-  {
-    title: "Search",
-    url: "#",
-    icon: Search,
-  },
-  {
-    title: "Settings",
-    url: "#",
-    icon: Settings,
-  },
-  {
-    title: "Home",
-    url: "#",
-    icon: Home,
-  },
-  {
-    title: "Inbox",
-    url: "#",
-    icon: Inbox,
-  },
-  {
-    title: "Calendar",
-    url: "#",
-    icon: Calendar,
-  },
-  {
-    title: "Search",
-    url: "#",
-    icon: Search,
-  },
-  {
-    title: "Settings",
-    url: "#",
-    icon: Settings,
+    title: "Tooltip",
+    url: "tooltip",
   },
 ];
 
+
 export function AppSidebar() {
   return (
-    <Sidebar variant="floating" collapsible="icon" className="absolute">
+    <Sidebar variant="floating" collapsible="offcanvas" className="absolute">
       <SidebarHeader>
         <SidebarMenu>hello world!</SidebarMenu>
       </SidebarHeader>
@@ -487,33 +236,16 @@ export function AppSidebar() {
               {items.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
-                    <a href={item.url}>
-                      <item.icon />
+                    <Link href={item.url}>
                       <span>{item.title}</span>
-                    </a>
+                    </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
-        <SidebarGroup>
-          <SidebarGroupContent>
-            <SidebarMenu>
-              <SidebarMenuItem>
-                <SidebarMenuButton>fdsfds</SidebarMenuButton>
-                <SidebarMenuSub>
-                  <SidebarMenuSubItem>
-                    <SidebarMenuSubButton>fdsafdas</SidebarMenuSubButton>
-                  </SidebarMenuSubItem>
-                  <SidebarMenuSubItem>
-                    <SidebarMenuSubButton>fdsafdas</SidebarMenuSubButton>
-                  </SidebarMenuSubItem>
-                </SidebarMenuSub>
-              </SidebarMenuItem>
-            </SidebarMenu>
-          </SidebarGroupContent>
-        </SidebarGroup>
+      
       </SidebarContent>
       <SidebarFooter>
         <SidebarMenu>by default</SidebarMenu>

@@ -1,7 +1,6 @@
 
-    import type { Config } from "tailwindcss";
-
-    const config: Config =  {
+    /** @type {import('tailwindcss').Config} */
+    export default {
       content: [
         "./app/**/*.{js,ts,jsx,tsx}",
         "./index.html",
@@ -25,11 +24,11 @@
     plugins: [
       require('tailwindcss-animate'),
       require('tailwind-scrollbar-hide'),
-      function ({ addVariant } : { addVariant: (variant: string, selector: string) => void }) {
+      function ({ addVariant }) {
         addVariant("rtl", '&[dir="rtl"]');
         addVariant("ltr", '&[dir="ltr"]');
       },
-      function ({ addComponents } : { addComponents: (components: Record<string, any>) => void }) {
+      function ({ addComponents }) {
         addComponents({
           
         ".typography-display-large-bold": {
@@ -373,4 +372,4 @@
     ],
   
     };
-  export default config;
+  
